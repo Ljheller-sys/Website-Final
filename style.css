@@ -361,25 +361,22 @@ nav {
 /* Logo-Platzhalter unten mittig am Bildrand */
 .about-logo-placeholder {
   position: absolute;
-  bottom: -50px;
+  bottom: -45px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 100px;
-  border: 2px solid var(--accent);
+  width: 110px;
+  height: 90px;
+  background: var(--bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg);
   z-index: 2;
+  padding: 10px;
 }
 
-.about-logo-placeholder span {
-  font-size: 0.55rem;
-  letter-spacing: 0.3em;
-  color: var(--accent);
-  text-transform: uppercase;
-  font-weight: 700;
+.about-logo-placeholder svg {
+  width: 100%;
+  height: auto;
 }
 
 /* Text-Block */
