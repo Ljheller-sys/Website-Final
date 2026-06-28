@@ -332,7 +332,7 @@ nav {
   position: relative;
   width: calc(100% - 14rem);
   margin: 0 auto;
-  aspect-ratio: 5 / 1;
+  aspect-ratio: 4 / 1;
   overflow: visible;
 }
 
