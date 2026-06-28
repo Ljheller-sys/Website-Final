@@ -258,6 +258,33 @@ nav {
   color: #999;
 }
 
+/* ── GALLERY HEADER ────────────────────────────────────────── */
+.gallery-header {
+  text-align: left;
+  max-width: 1400px;
+  margin: 0 auto 3rem;
+  padding: 0 0.5rem;
+}
+
+.gallery-sub {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.gallery-title {
+  font-size: clamp(4rem, 11vw, 13rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0;
+}
+
 /* ── COLLAGE ───────────────────────────────────────────────── */
 .collage {
   padding: 6rem 4rem;
