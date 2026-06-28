@@ -339,12 +339,16 @@ nav {
 .about-banner-img {
   width: 100%;
   height: 100%;
-  background: #ddd;
-  border: 1px dashed #bbb;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+}
+
+.about-banner-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
 }
 
 .placeholder-label {
