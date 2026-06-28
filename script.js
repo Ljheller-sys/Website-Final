@@ -1,3 +1,7 @@
+// always start at top on page load
+window.scrollTo(0, 0);
+history.scrollRestoration = 'manual';
+
 // scroll fade-in
 const targets = [
   document.querySelector('.collage'),
