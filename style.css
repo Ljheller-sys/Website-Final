@@ -181,7 +181,7 @@ nav {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url(' hero-bg.jpg');
+  background-image: url('hero-bg.jpg');
   background-size: cover;
   background-position: center 30%;
   filter: brightness(0.38);
