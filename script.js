@@ -19,6 +19,33 @@ const observer = new IntersectionObserver(
 
 targets.forEach(el => el && observer.observe(el));
 
+// burger menu
+const burger  = document.getElementById('burger');
+const overlay = document.getElementById('menuOverlay');
+const menuClose = document.getElementById('menuClose');
+const menuLinks = document.querySelectorAll('.menu-link');
+
+function openMenu() {
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+burger.addEventListener('click', openMenu);
+menuClose.addEventListener('click', closeMenu);
+
+// close when a link is clicked
+menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+// close on Escape key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeMenu();
+});
+
 // nav background on scroll
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {

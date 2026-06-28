@@ -45,23 +45,134 @@ nav {
   color: var(--accent);
 }
 
-.nav-links {
-  list-style: none;
+/* ── BURGER ────────────────────────────────────────────────── */
+.burger {
+  background: none;
+  border: none;
+  cursor: pointer;
   display: flex;
-  gap: 3rem;
+  flex-direction: column;
+  gap: 6px;
+  padding: 4px;
+  z-index: 200;
 }
 
-.nav-links a {
+.burger span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--text);
+  transition: transform 0.3s, opacity 0.3s, background 0.3s;
+}
+
+/* ── MENU OVERLAY ──────────────────────────────────────────── */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 150;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.menu-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.menu-close {
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.4rem;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.menu-close:hover {
+  color: var(--accent);
+}
+
+.menu-links {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.menu-link {
   text-decoration: none;
   color: var(--text);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.25em;
+  font-size: clamp(3rem, 9vw, 9rem);
+  font-weight: 900;
   text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  display: block;
+  position: relative;
   transition: color 0.25s;
 }
 
-.nav-links a:hover {
+.menu-link::before {
+  content: attr(data-num);
+  position: absolute;
+  left: -3.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: #555;
+}
+
+.menu-link:hover {
+  color: var(--accent);
+}
+
+/* slide-up animation per item */
+.menu-links li {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.menu-overlay.open .menu-links li:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.1s; }
+.menu-overlay.open .menu-links li:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.18s; }
+.menu-overlay.open .menu-links li:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.26s; }
+
+/* ── KONTAKT SECTION ───────────────────────────────────────── */
+.kontakt {
+  padding: 6rem 4rem;
+  text-align: center;
+}
+
+.kontakt-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+.kontakt-mail {
+  font-size: clamp(1.2rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: color 0.25s;
+}
+
+.kontakt-mail:hover {
   color: var(--accent);
 }
 

@@ -11,11 +11,22 @@
   <!-- NAV -->
   <nav>
     <div class="nav-logo">PORTFOLIO</div>
-    <ul class="nav-links">
-      <li><a href="#artists">Artists</a></li>
-      <li><a href="#projekte">Projekte</a></li>
-    </ul>
+    <button class="burger" id="burger" aria-label="Menü öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
+
+  <!-- FULLSCREEN MENU OVERLAY -->
+  <div class="menu-overlay" id="menuOverlay">
+    <button class="menu-close" id="menuClose" aria-label="Menü schließen">&#10005;</button>
+    <ul class="menu-links">
+      <li><a href="#projekte" class="menu-link" data-num="01">Projekte</a></li>
+      <li><a href="#artists"  class="menu-link" data-num="02">Artists</a></li>
+      <li><a href="#kontakt"  class="menu-link" data-num="03">Kontakt</a></li>
+    </ul>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -60,9 +71,15 @@
     </div>
   </section>
 
+  <!-- KONTAKT -->
+  <section class="kontakt" id="kontakt">
+    <p class="kontakt-label">Kontakt</p>
+    <a href="mailto:contact@lucaheller.de" class="kontakt-mail">contact@lucaheller.de</a>
+  </section>
+
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2026 Portfolio. All rights reserved.</p>
+    <p>&copy; 2026 Luca Heller. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
