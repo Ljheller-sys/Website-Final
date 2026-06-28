@@ -462,8 +462,8 @@ nav {
 }
 
 .photo-bw {
-  width: 55%;
-  aspect-ratio: 16 / 9;
+  width: 62%;
+  aspect-ratio: 21 / 9;
   background: #1c1c1c;
   border: 1px dashed #333;
   display: flex;
@@ -505,14 +505,16 @@ nav {
 
 /* Rechts oben auf Foto 1 */
 .lines-overlay--right {
-  top: 18%;
-  right: -18%;
+  top: 15%;
+  right: -28%;
+  width: 32%;
 }
 
 /* Links unten auf Foto 2 */
 .lines-overlay--left {
-  bottom: 18%;
-  left: -18%;
+  bottom: 15%;
+  left: -28%;
+  width: 32%;
 }
 
 /* ── FOOTER ────────────────────────────────────────────────── */
