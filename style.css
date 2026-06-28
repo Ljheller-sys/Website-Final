@@ -457,21 +457,20 @@ nav {
 
 .photo-row {
   display: flex;
-  align-items: center;
   justify-content: center;
   width: 100%;
-  gap: 0;
 }
 
 .photo-bw {
   width: 65%;
-  flex-shrink: 0;
   aspect-ratio: 16 / 9;
   background: #1c1c1c;
   border: 1px dashed #333;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: visible;
 }
 
 .photo-bw-placeholder {
@@ -481,55 +480,32 @@ nav {
   text-transform: uppercase;
 }
 
-/* AGE 20 + Linien rechts (Foto 1) */
-.photo-meta-right {
+/* Linien-Block — absolut positioniert, überlappend */
+.lines-overlay {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding-left: 1.5rem;
-  gap: 1rem;
-  width: 17%;
-  max-width: 17%;
-  overflow: hidden;
-  flex-shrink: 0;
+  gap: 10px;
+  width: 22%;
 }
 
-.age-label {
-  font-size: 1.6rem;
-  font-weight: 900;
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--accent);
-  letter-spacing: 0.05em;
-  font-family: monospace;
-}
-
-.lines-right,
-.lines-left {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-}
-
-.lines-right span,
-.lines-left span {
+.lines-overlay span {
   display: block;
-  height: 2px;
+  height: 3px;
   width: 100%;
   background: var(--accent);
-  border-radius: 1px;
 }
 
-/* Linien links (Foto 2) */
-.photo-meta-left {
-  width: 17%;
-  max-width: 17%;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 1.5rem;
-  overflow: hidden;
+/* Rechts oben auf Foto 1 */
+.lines-overlay--right {
+  top: 18%;
+  right: -18%;
+}
+
+/* Links unten auf Foto 2 */
+.lines-overlay--left {
+  bottom: 18%;
+  left: -18%;
 }
 
 /* ── FOOTER ────────────────────────────────────────────────── */
