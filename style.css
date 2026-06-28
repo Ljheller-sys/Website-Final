@@ -47,22 +47,25 @@ nav {
 
 /* ── BURGER ────────────────────────────────────────────────── */
 .burger {
+  position: fixed;
+  top: 1.6rem;
+  right: 2.5rem;
   background: none;
   border: none;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 4px;
-  z-index: 200;
+  gap: 7px;
+  padding: 6px;
+  z-index: 300;
 }
 
 .burger span {
   display: block;
-  width: 28px;
+  width: 30px;
   height: 2px;
-  background: var(--text);
-  transition: transform 0.3s, opacity 0.3s, background 0.3s;
+  background: #e8e8e8;
+  border-radius: 2px;
 }
 
 /* ── MENU OVERLAY ──────────────────────────────────────────── */
