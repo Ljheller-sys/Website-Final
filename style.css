@@ -465,15 +465,13 @@ nav {
   width: 62%;
   aspect-ratio: 21 / 9;
   background: #1c1c1c;
-  border: 1px dashed #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-  overflow: visible;
+  /* overflow hidden für Bild, Linien kommen per wrapper raus */
 }
 
 .photo-bw img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -485,15 +483,20 @@ nav {
   letter-spacing: 0.3em;
   color: #444;
   text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* Linien-Block — absolut positioniert, überlappend */
+/* Linien — außerhalb des Fotos, nur leicht überlappend */
 .lines-overlay {
   position: absolute;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 22%;
+  width: 28%;
+  z-index: 2;
 }
 
 .lines-overlay span {
@@ -503,18 +506,16 @@ nav {
   background: var(--accent);
 }
 
-/* Rechts oben auf Foto 1 */
+/* Rechts oben — ragt links leicht ins Foto */
 .lines-overlay--right {
-  top: 15%;
-  right: -28%;
-  width: 32%;
+  top: 12%;
+  left: 88%;
 }
 
-/* Links unten auf Foto 2 */
+/* Links unten — ragt rechts leicht ins Foto */
 .lines-overlay--left {
-  bottom: 15%;
-  left: -28%;
-  width: 32%;
+  bottom: 12%;
+  right: 88%;
 }
 
 /* ── FOOTER ────────────────────────────────────────────────── */
