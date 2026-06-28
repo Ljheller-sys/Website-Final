@@ -423,22 +423,21 @@ nav {
   bottom: -50px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
+  width: auto;
   height: 100px;
+  background: none;
   border: none;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent);
-  z-index: 2;
 }
 
-.about-logo-placeholder span {
-  font-size: 0.55rem;
-  letter-spacing: 0.3em;
-  color: var(--bg);
-  text-transform: uppercase;
-  font-weight: 700;
+.about-logo-placeholder img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 /* Text-Block */
