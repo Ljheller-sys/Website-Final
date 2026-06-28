@@ -322,15 +322,16 @@ nav {
 
 /* ── ABOUT ─────────────────────────────────────────────────── */
 .about {
-  padding: 0;
+  padding: 5rem 0;
 }
 
-/* Volles Querformat-Bild */
+/* Querformat-Bild mit Abstand am Rand */
 .about-banner {
   position: relative;
-  width: 100%;
-  aspect-ratio: 21 / 9;
-  overflow: hidden;
+  width: calc(100% - 8rem);
+  margin: 0 auto;
+  aspect-ratio: 3 / 1;
+  overflow: visible;
 }
 
 .about-banner-img {
@@ -351,23 +352,24 @@ nav {
   text-transform: uppercase;
 }
 
-/* Logo-Platzhalter zentriert über dem Bild */
+/* Logo-Platzhalter unten mittig am Bildrand */
 .about-logo-placeholder {
   position: absolute;
-  top: 50%;
+  bottom: -50px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 130px;
-  height: 130px;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
   border: 2px solid var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.5);
+  background: var(--bg);
+  z-index: 2;
 }
 
 .about-logo-placeholder span {
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   letter-spacing: 0.3em;
   color: var(--accent);
   text-transform: uppercase;
@@ -376,9 +378,10 @@ nav {
 
 /* Text-Block */
 .about-inner {
-  max-width: 900px;
+  width: calc(100% - 8rem);
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 5rem 4rem;
+  padding: 5rem 0 3rem;
   text-align: left;
 }
 
