@@ -389,7 +389,7 @@ nav {
   width: calc(100% - 8rem);
   max-width: 1400px;
   margin: 0 auto;
-  padding: 5rem 0 3rem;
+  padding: 5rem 0 7rem;
   text-align: left;
 }
 
@@ -465,6 +465,7 @@ nav {
   display: flex;
   justify-content: center;
   width: 100%;
+  overflow: visible;
 }
 
 .photo-bw {
@@ -512,16 +513,18 @@ nav {
   background: var(--accent);
 }
 
-/* Rechts oben — ragt links leicht ins Foto */
+/* Rechts oben — ragt links leicht ins Foto, zieht bis zum Rand */
 .lines-overlay--right {
   top: 12%;
-  left: 88%;
+  left: 93%;
+  width: 60vw;
 }
 
-/* Links unten — ragt rechts leicht ins Foto */
+/* Links unten — ragt rechts leicht ins Foto, zieht bis zum Rand */
 .lines-overlay--left {
   bottom: 12%;
-  right: 88%;
+  right: 93%;
+  width: 60vw;
 }
 
 /* ── FOOTER ────────────────────────────────────────────────── */
