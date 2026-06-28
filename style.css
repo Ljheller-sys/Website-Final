@@ -147,10 +147,10 @@ nav {
 }
 
 .referenzen-label {
-  font-size: 0.65rem;
+  font-size: 1rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: #555;
+  color: #888;
   margin-bottom: 4rem;
 }
 
@@ -168,12 +168,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.6;
-  transition: opacity 0.25s;
-}
-
-.ref-item:hover {
-  opacity: 1;
 }
 
 .ref-item img {
@@ -182,7 +176,6 @@ nav {
   width: 100%;
   height: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
 }
 
 /* ── KONTAKT SECTION ───────────────────────────────────────── */
