@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+  <title>Luca Heller</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -22,13 +22,13 @@
   <div class="menu-overlay" id="menuOverlay">
     <button class="menu-close" id="menuClose" aria-label="Menü schließen">&#10005;</button>
     <ul class="menu-links">
-      <li><a href="#projekte" class="menu-link" data-num="01">Projekte</a></li>
-      <li><a href="#artists"  class="menu-link" data-num="02">Artists</a></li>
-      <li><a href="#kontakt"  class="menu-link" data-num="03">Kontakt</a></li>
+      <li><a href="#projekte" class="menu-link">Projekte</a></li>
+      <li><a href="#artists"  class="menu-link">Artists</a></li>
+      <li><a href="#kontakt"  class="menu-link">Kontakt</a></li>
     </ul>
   </div>
 
-  <!-- HERO -->
+  <!-- 1. HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
@@ -37,30 +37,15 @@
     </div>
   </section>
 
-  <!-- COLLAGE -->
-  <section class="collage" id="projekte">
-    <div class="collage-grid">
-      <div class="img-placeholder tall"    data-label="01"></div>
-      <div class="img-placeholder wide"    data-label="02"></div>
-      <div class="img-placeholder"         data-label="03"></div>
-      <div class="img-placeholder"         data-label="04"></div>
-      <div class="img-placeholder tall"    data-label="05"></div>
-      <div class="img-placeholder wide"    data-label="06"></div>
-      <div class="img-placeholder"         data-label="07"></div>
-      <div class="img-placeholder"         data-label="08"></div>
-      <div class="img-placeholder wide"    data-label="09"></div>
-      <div class="img-placeholder"         data-label="10"></div>
-    </div>
-  </section>
-
-  <!-- CINEMATIC BANNER + ABOUT -->
+  <!-- 2. ABOUT (direkt nach dem Header) -->
   <section class="about" id="artists">
 
-    <!-- Volles Querformat-Bild mit Logo in der Mitte -->
+    <!-- Breites Querformat-Bild 21:9 -->
     <div class="about-banner">
       <div class="about-banner-img">
-        <!-- Bild hier: <img src="about-bg.jpg" alt=""> -->
+        <div class="placeholder-label">BILD PLATZHALTER — 21:9</div>
       </div>
+      <!-- Logo mittig über dem Bild -->
       <div class="about-logo-placeholder">
         <span>LOGO</span>
       </div>
@@ -69,9 +54,10 @@
     <!-- Text darunter -->
     <div class="about-inner">
       <p class="about-text">
-        Ich habe mein Hobby zum Beruf gemacht. Schon als Kind wollte ich unbedingt eine Kamera in der Hand halten.
-        Während ich später davon träumte, Landwirt zu werden, begann ich Traktoren, Landschaften und die Schönheit
-        der Natur zu fotografieren und entdeckte dabei meine Leidenschaft für visuelles Storytelling.<br /><br />
+        Ich habe mein Hobby zum Beruf gemacht. Schon als Kind wollte ich unbedingt eine Kamera
+        in der Hand halten. Während ich später davon träumte, Landwirt zu werden, begann ich
+        Traktoren, Landschaften und die Schönheit der Natur zu fotografieren und entdeckte dabei
+        meine Leidenschaft für visuelles Storytelling.<br /><br />
         Heute halte ich genau die Momente fest, die sich kein zweites Mal wiederholen lassen.
         Denn jeder Augenblick ist einzigartig.
       </p>
@@ -80,7 +66,23 @@
 
   </section>
 
-  <!-- KONTAKT -->
+  <!-- 3. COLLAGE -->
+  <section class="collage" id="projekte">
+    <div class="collage-grid">
+      <div class="img-placeholder" data-label="01"></div>
+      <div class="img-placeholder" data-label="02"></div>
+      <div class="img-placeholder" data-label="03"></div>
+      <div class="img-placeholder" data-label="04"></div>
+      <div class="img-placeholder" data-label="05"></div>
+      <div class="img-placeholder" data-label="06"></div>
+      <div class="img-placeholder" data-label="07"></div>
+      <div class="img-placeholder" data-label="08"></div>
+      <div class="img-placeholder" data-label="09"></div>
+      <div class="img-placeholder" data-label="10"></div>
+    </div>
+  </section>
+
+  <!-- 4. KONTAKT -->
   <section class="kontakt" id="kontakt">
     <p class="kontakt-label">Kontakt</p>
     <a href="mailto:contact@lucaheller.de" class="kontakt-mail">contact@lucaheller.de</a>
