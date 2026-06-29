@@ -325,9 +325,10 @@ nav {
 .img-placeholder:nth-child(8) { grid-column: span 4; }
 
 /* individual crop adjustments */
-.img-placeholder:nth-child(1) img { object-position: center 0%; }
+.img-placeholder:nth-child(1) img { object-position: center 100%; }
 .img-placeholder:nth-child(4) img { object-position: center 30%; }
-.img-placeholder:nth-child(5) img { object-position: center 0%; }
+.img-placeholder:nth-child(5) img { object-position: center 70%; }
+.img-placeholder:nth-child(7) img { object-position: center 100%; }
 .img-placeholder:nth-child(8) img { object-position: center 65%; }
 
 
