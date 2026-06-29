@@ -318,11 +318,15 @@ nav {
 .img-placeholder:nth-child(1) { grid-column: span 2; grid-row: span 2; }
 .img-placeholder:nth-child(2) { grid-column: span 4; }
 .img-placeholder:nth-child(3) { grid-column: span 2; }
-.img-placeholder:nth-child(4) { grid-column: span 2; }
+.img-placeholder:nth-child(4) { grid-column: span 2; grid-row: span 2; }
 .img-placeholder:nth-child(5) { grid-column: span 3; }
 .img-placeholder:nth-child(6) { grid-column: span 1; }
 .img-placeholder:nth-child(7) { grid-column: span 2; }
-.img-placeholder:nth-child(8) { grid-column: span 6; }
+.img-placeholder:nth-child(8) { grid-column: span 4; }
+
+/* individual crop adjustments */
+.img-placeholder:nth-child(5) img { object-position: center 20%; }
+.img-placeholder:nth-child(4) img { object-position: center 30%; }
 
 
 /* ── CINEMATIC BANNER ──────────────────────────────────────── */
