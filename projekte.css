@@ -1,15 +1,29 @@
 /* ── PROJEKTE PAGE ─────────────────────────────────────────── */
 .projekte-page {
-  background: var(--bg);
+  background: var(--accent);
   min-height: 100vh;
+  overflow: hidden;
+}
+
+.projekte-page nav {
+  background: transparent !important;
+  backdrop-filter: none !important;
+}
+
+.projekte-page .nav-logo a {
+  color: var(--bg) !important;
+}
+
+.projekte-page .burger span {
+  background: var(--bg);
 }
 
 .projekte-main {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8rem 4rem;
+  padding: 5rem 4rem 2rem;
   position: relative;
 }
 
@@ -37,38 +51,41 @@
   position: relative;
   z-index: 1;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
 }
 
 .projekt-item {
   line-height: 1;
-  margin: 0;
 }
 
 .projekt-link {
   display: block;
-  font-size: clamp(2.2rem, 5.5vw, 7rem);
+  font-size: clamp(1rem, 4.8vh, 5.5rem);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   text-decoration: none;
-  color: var(--text);
-  padding: 0.3em 0;
+  color: var(--bg);
+  padding: 0.18em 0;
   transition: color 0.05s, -webkit-text-stroke 0.05s;
   white-space: nowrap;
 }
 
 .projekt-item:hover .projekt-link {
   color: transparent;
-  -webkit-text-stroke: 1.5px var(--text);
+  -webkit-text-stroke: 1.5px var(--bg);
 }
 
 /* ── RESPONSIVE ────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .projekte-main { padding: 7rem 1.5rem 4rem; }
+  .projekte-main { padding: 5rem 1.5rem 2rem; height: auto; min-height: 100vh; }
 
   .projekt-link {
-    font-size: clamp(1.4rem, 6vw, 3rem);
+    font-size: clamp(1rem, 4.5vw, 2rem);
     white-space: normal;
-    padding: 0.4em 0;
+    padding: 0.3em 0;
   }
 }
