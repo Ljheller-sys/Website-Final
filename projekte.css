@@ -1,6 +1,6 @@
 /* ── PROJEKTE PAGE ─────────────────────────────────────────── */
 .projekte-page {
-  background: var(--accent);
+  background: #111;
   min-height: 100vh;
   overflow: hidden;
 }
@@ -11,11 +11,11 @@
 }
 
 .projekte-page .nav-logo a {
-  color: var(--bg) !important;
+  color: var(--accent) !important;
 }
 
 .projekte-page .burger span {
-  background: var(--bg);
+  background: var(--text);
 }
 
 .projekte-main {
@@ -63,12 +63,12 @@
 
 .projekt-link {
   display: block;
-  font-size: clamp(1rem, 5.8vh, 6.5rem);
+  font-size: clamp(1rem, 6.5vh, 7rem);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   text-decoration: none;
-  color: var(--bg);
+  color: var(--accent);
   padding: 0.18em 0;
   transition: color 0.05s, -webkit-text-stroke 0.05s;
   white-space: nowrap;
@@ -76,7 +76,7 @@
 
 .projekt-item:hover .projekt-link {
   color: transparent;
-  -webkit-text-stroke: 1.5px var(--bg);
+  -webkit-text-stroke: 1.5px var(--accent);
 }
 
 /* ── RESPONSIVE ────────────────────────────────────────────── */
