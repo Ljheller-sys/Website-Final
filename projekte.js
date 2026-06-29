@@ -1,19 +1,42 @@
-const bg = document.getElementById('projekteBg');
+const bgA = document.getElementById('projekteBgA');
+const bgB = document.getElementById('projekteBgB');
 const items = document.querySelectorAll('.projekt-item');
-let fadeTimeout;
+
+let active = bgA;
+let inactive = bgB;
+let leaveTimeout;
+let currentImg = null;
+
+// preload images
+items.forEach(item => {
+  if (item.dataset.img) {
+    const img = new Image();
+    img.src = item.dataset.img;
+  }
+});
 
 items.forEach(item => {
   const img = item.dataset.img;
 
   item.addEventListener('mouseenter', () => {
-    clearTimeout(fadeTimeout);
-    bg.style.backgroundImage = `url('${img}')`;
-    bg.classList.add('visible');
+    clearTimeout(leaveTimeout);
+
+    if (!img || img === currentImg) return;
+    currentImg = img;
+
+    // load new image into inactive layer, then crossfade
+    inactive.style.backgroundImage = `url('${img}')`;
+    inactive.style.opacity = '1';
+    active.style.opacity = '0';
+
+    // swap roles
+    [active, inactive] = [inactive, active];
   });
 
   item.addEventListener('mouseleave', () => {
-    fadeTimeout = setTimeout(() => {
-      bg.classList.remove('visible');
+    leaveTimeout = setTimeout(() => {
+      active.style.opacity = '0';
+      currentImg = null;
     }, 80);
   });
 });

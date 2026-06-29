@@ -34,14 +34,10 @@
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1.2s ease;
+  transition: opacity 1s ease;
   z-index: 0;
   pointer-events: none;
   filter: brightness(0.45);
-}
-
-.projekte-bg.visible {
-  opacity: 1;
 }
 
 /* ── PROJECT LIST ──────────────────────────────────────────── */
