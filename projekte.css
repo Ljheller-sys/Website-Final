@@ -1,6 +1,6 @@
 /* ── PROJEKTE PAGE ─────────────────────────────────────────── */
 .projekte-page {
-  background: #111;
+  background: #111 url('Hintergund_Projekte.jpg') center/cover no-repeat fixed;
   min-height: 100vh;
   overflow: hidden;
 }
