@@ -2,7 +2,6 @@
 .projekte-page {
   background: #111;
   min-height: 100vh;
-  overflow: hidden;
 }
 
 .projekte-page::before {
@@ -28,11 +27,11 @@
 }
 
 .projekte-main {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 4rem 2rem;
+  padding: 5rem 4rem 4rem;
   position: relative;
   z-index: 1;
 }
