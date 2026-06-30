@@ -24,8 +24,8 @@ const observer = new IntersectionObserver(
 targets.forEach(el => el && observer.observe(el));
 
 // burger menu
-const burger  = document.getElementById('burger');
-const overlay = document.getElementById('menuOverlay');
+const burger    = document.getElementById('burger');
+const overlay   = document.getElementById('menuOverlay');
 const menuClose = document.getElementById('menuClose');
 const menuLinks = document.querySelectorAll('.menu-link');
 
@@ -41,13 +41,47 @@ function closeMenu() {
 
 burger.addEventListener('click', openMenu);
 menuClose.addEventListener('click', closeMenu);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
-// close when a link is clicked
-menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+// menu image preview crossfade
+const p1 = document.getElementById('menuPreview1');
+const p2 = document.getElementById('menuPreview2');
 
-// close on Escape key
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeMenu();
+if (p1 && p2) {
+  let activePreview = p1;
+  let inactivePreview = p2;
+  let currentSrc = '';
+
+  menuLinks.forEach(link => {
+    const img = link.dataset.preview;
+    if (img) {
+      const pre = new Image();
+      pre.src = img;
+    }
+
+    link.addEventListener('mouseenter', () => {
+      const img = link.dataset.preview;
+      if (!img || img === currentSrc) return;
+      currentSrc = img;
+      inactivePreview.src = img;
+      inactivePreview.classList.add('active');
+      activePreview.classList.remove('active');
+      [activePreview, inactivePreview] = [inactivePreview, activePreview];
+    });
+  });
+
+  // hide preview when leaving menu area
+  overlay.addEventListener('mouseleave', () => {
+    activePreview.classList.remove('active');
+    currentSrc = '';
+  });
+}
+
+// click flash animation
+menuLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    this.classList.add('clicked');
+  });
 });
 
 // nav background on scroll

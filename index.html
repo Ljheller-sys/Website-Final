@@ -20,15 +20,21 @@
 
   <!-- FULLSCREEN MENU OVERLAY -->
   <div class="menu-overlay" id="menuOverlay">
-    <button class="menu-close" id="menuClose" aria-label="Menü schließen">&#10005;</button>
-    <ul class="menu-links">
-      <li><a href="index.html" class="menu-link">Home</a></li>
-      <li><a href="video.html" class="menu-link">Video</a></li>
-      <li><a href="foto.html" class="menu-link">Foto</a></li>
-      <li><a href="artist.html" class="menu-link">Artist</a></li>
-      <li><a href="#kontakt"  class="menu-link">Kontakt</a></li>
-    </ul>
-  </div>
+    <button class="menu-close" id="menuClose" aria-label="Menü schließen">&#10005;<\/button>
+    <div class="menu-left">
+      <ul class="menu-links">
+        <li><a href="index.html" class="menu-link" data-preview="hero-bg.jpg"><span class="menu-num">00<\/span>Home<\/a><\/li>
+        <li><a href="video.html" class="menu-link" data-preview="BGV_KSC_Hintergrund.jpg"><span class="menu-num">01<\/span>Video<\/a><\/li>
+        <li><a href="foto.html" class="menu-link" data-preview="REWE_Hintergrund.jpg"><span class="menu-num">02<\/span>Foto<\/a><\/li>
+        <li><a href="artist.html" class="menu-link" data-preview="Musikvideo_Hintergrund.jpg"><span class="menu-num">03<\/span>Artist<\/a><\/li>
+        <li><a href="index.html#kontakt" class="menu-link" data-preview="Hintergund_Projekte.jpg"><span class="menu-num">04<\/span>Kontakt<\/a><\/li>
+      <\/ul>
+    <\/div>
+    <div class="menu-right">
+      <img class="menu-preview-img" id="menuPreview1" src="" alt="" \/>
+      <img class="menu-preview-img" id="menuPreview2" src="" alt="" \/>
+    <\/div>
+  <\/div>
 
   <!-- 1. HERO -->
   <section class="hero">

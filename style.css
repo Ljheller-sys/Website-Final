@@ -72,14 +72,14 @@ nav {
 .menu-overlay {
   position: fixed;
   inset: 0;
-  background: var(--bg);
+  background: #0a0a0a;
   z-index: 150;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.5s ease;
+  overflow: hidden;
 }
 
 .menu-overlay.open {
@@ -96,48 +96,97 @@ nav {
   color: var(--text);
   font-size: 1.4rem;
   cursor: pointer;
-  letter-spacing: 0.05em;
+  z-index: 10;
   transition: color 0.2s;
 }
 
-.menu-close:hover {
-  color: var(--accent);
+.menu-close:hover { color: var(--accent); }
+
+/* Left: links */
+.menu-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 4rem 4rem;
 }
 
 .menu-links {
   list-style: none;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
 }
+
+.menu-links li {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.menu-overlay.open .menu-links li:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.08s; }
+.menu-overlay.open .menu-links li:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.15s; }
+.menu-overlay.open .menu-links li:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.22s; }
+.menu-overlay.open .menu-links li:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.29s; }
+.menu-overlay.open .menu-links li:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.36s; }
 
 .menu-link {
   text-decoration: none;
   color: var(--text);
-  font-size: clamp(3.5rem, 10vw, 10rem);
+  font-size: clamp(2.5rem, 6vw, 7rem);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  line-height: 1.05;
-  display: block;
-  transition: color 0.25s;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.3em 0;
+  border-bottom: 1px solid #1e1e1e;
+  transition: color 0.25s, letter-spacing 0.3s;
+  position: relative;
 }
+
+.menu-links li:first-child .menu-link { border-top: 1px solid #1e1e1e; }
 
 .menu-link:hover {
   color: var(--accent);
+  letter-spacing: 0.02em;
 }
 
-/* slide-up animation per item */
-.menu-links li {
+.menu-num {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: #444;
+  font-weight: 400;
+  flex-shrink: 0;
+  transition: color 0.25s;
+}
+
+.menu-link:hover .menu-num { color: var(--accent); }
+
+/* Right: image preview */
+.menu-right {
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-preview-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: scale(1.08);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.menu-overlay.open .menu-links li:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.1s; }
-.menu-overlay.open .menu-links li:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.18s; }
-.menu-overlay.open .menu-links li:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.26s; }
+.menu-preview-img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* click flash */
+.menu-link.clicked {
+  color: var(--accent) !important;
+}
 
 /* ── REFERENZEN ────────────────────────────────────────────── */
 .referenzen {
