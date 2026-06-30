@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BGV Versicherung KSC — Luca Heller</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="projekt-detail.css" />
+</head>
+<body class="detail-page">
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo"><a href="index.html" style="color:inherit;text-decoration:none;">PORTFOLIO</a></div>
+    <button class="burger" id="burger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- FULLSCREEN MENU OVERLAY -->
+  <div class="menu-overlay" id="menuOverlay">
+    <button class="menu-close" id="menuClose" aria-label="Menü schließen">&#10005;</button>
+    <div class="menu-center">
+      <ul class="menu-links">
+        <li><a href="index.html" class="menu-link">Home</a></li>
+        <li><a href="video.html" class="menu-link">Video</a></li>
+        <li><a href="foto.html" class="menu-link">Foto</a></li>
+        <li><a href="artist.html" class="menu-link">Artist</a></li>
+        <li><a href="index.html#kontakt" class="menu-link">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="detail-hero">
+    <div class="detail-hero-bg" id="detailHeroBg" style="background-image: url('BGV_KSC_Hintergrund.jpg');"></div>
+    <div class="detail-hero-content">
+      <p class="detail-category">Video — Werbefilm</p>
+      <h1 class="detail-title">BGV <span>Versicherung</span><br>KSC</h1>
+    </div>
+  </section>
+
+  <a href="video.html" class="detail-back">Zurück zu Video</a>
+
+  <!-- CREDITS -->
+  <div class="detail-year">2024</div>
+  <div class="detail-credits">
+    <div class="credits-grid">
+      <div class="credit-item">
+        <p class="credit-role">Regie</p>
+        <p class="credit-name">Luca Heller</p>
+      </div>
+      <div class="credit-item">
+        <p class="credit-role">Kamera</p>
+        <p class="credit-name">Luca Heller</p>
+      </div>
+      <div class="credit-item">
+        <p class="credit-role">Schnitt</p>
+        <p class="credit-name">Luca Heller</p>
+      </div>
+      <div class="credit-item">
+        <p class="credit-role">Kunde</p>
+        <p class="credit-name">BGV Versicherung</p>
+      </div>
+      <div class="credit-item">
+        <p class="credit-role">Partner</p>
+        <p class="credit-name">Karlsruher SC</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="detail-video">
+    <p class="detail-section-label">Ergebnis</p>
+    <div class="detail-video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/1AU0mz7sEtM"
+        title="BGV Versicherung KSC"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <!-- BTS -->
+  <div class="detail-bts">
+    <p class="detail-section-label">Behind the Scenes</p>
+    <div class="bts-grid">
+      <!-- Platzhalter — ersetze src mit echten BTS-Fotos -->
+      <div class="bts-item bts-wide"><img src="BGV_KSC_Hintergrund.jpg" alt="BTS 1" /></div>
+      <div class="bts-item"><img src="BGV_KSC_Hintergrund.jpg" alt="BTS 2" /></div>
+      <div class="bts-item"><img src="BGV_KSC_Hintergrund.jpg" alt="BTS 3" /></div>
+      <div class="bts-item"><img src="BGV_KSC_Hintergrund.jpg" alt="BTS 4" /></div>
+      <div class="bts-item bts-wide"><img src="BGV_KSC_Hintergrund.jpg" alt="BTS 5" /></div>
+    </div>
+  </div>
+
+  <!-- FOOTER NAV -->
+  <div class="detail-footer-nav">
+    <a href="video.html">← Alle Videos</a>
+    <a href="index.html#kontakt">Kontakt</a>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // hero bg slow zoom on load
+    const bg = document.getElementById('detailHeroBg');
+    if (bg) requestAnimationFrame(() => bg.classList.add('loaded'));
+  </script>
+</body>
+</html>
