@@ -47,32 +47,29 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu();
 const p1 = document.getElementById('menuPreview1');
 const p2 = document.getElementById('menuPreview2');
 
-if (p1 && p2) {
-  let activePreview = p1;
-  let inactivePreview = p2;
-  let currentSrc = '';
+let activePreview = p1;
+let inactivePreview = p2;
+let currentSrc = '';
 
+function showPreview(img) {
+  if (!p1 || !p2 || !img || img === currentSrc) return;
+  currentSrc = img;
+  inactivePreview.src = img;
+  inactivePreview.classList.add('active');
+  activePreview.classList.remove('active');
+  [activePreview, inactivePreview] = [inactivePreview, activePreview];
+}
+
+if (p1 && p2) {
   menuLinks.forEach(link => {
     const img = link.dataset.preview;
-    if (img) {
-      const pre = new Image();
-      pre.src = img;
-    }
+    if (img) { const pre = new Image(); pre.src = img; }
 
-    link.addEventListener('mouseenter', () => {
-      const img = link.dataset.preview;
-      if (!img || img === currentSrc) return;
-      currentSrc = img;
-      inactivePreview.src = img;
-      inactivePreview.classList.add('active');
-      activePreview.classList.remove('active');
-      [activePreview, inactivePreview] = [inactivePreview, activePreview];
-    });
+    link.addEventListener('mouseenter', () => showPreview(link.dataset.preview));
   });
 
-  // hide preview when leaving menu area
   overlay.addEventListener('mouseleave', () => {
-    activePreview.classList.remove('active');
+    if (activePreview) activePreview.classList.remove('active');
     currentSrc = '';
   });
 }
@@ -82,6 +79,20 @@ menuLinks.forEach(link => {
   link.addEventListener('click', function(e) {
     this.classList.add('clicked');
   });
+});
+
+// touch preview flash (mobile only)
+menuLinks.forEach(link => {
+  link.addEventListener('touchstart', function(e) {
+    const img = this.dataset.preview;
+    const href = this.getAttribute('href');
+    if (!img || !href || href === '#') return;
+
+    e.preventDefault();
+    showPreview(img);
+
+    setTimeout(() => { window.location.href = href; }, 350);
+  }, { passive: false });
 });
 
 // nav background on scroll
