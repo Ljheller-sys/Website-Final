@@ -43,40 +43,41 @@ burger.addEventListener('click', openMenu);
 menuClose.addEventListener('click', closeMenu);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
-// menu image preview crossfade
-const p1 = document.getElementById('menuPreview1');
-const p2 = document.getElementById('menuPreview2');
-
-let activePreview = p1;
-let inactivePreview = p2;
+// menu image preview — side panels
+const leftPanel  = document.getElementById('menuImgLeft');
+const rightPanel = document.getElementById('menuImgRight');
+const leftImg    = leftPanel  ? leftPanel.querySelector('img')  : null;
+const rightImg   = rightPanel ? rightPanel.querySelector('img') : null;
 let currentSrc = '';
 
 function showPreview(img) {
-  if (!p1 || !p2 || !img || img === currentSrc) return;
-  currentSrc = img;
-  inactivePreview.src = img;
-  inactivePreview.classList.add('active');
-  activePreview.classList.remove('active');
-  [activePreview, inactivePreview] = [inactivePreview, activePreview];
+  if (!leftPanel || !img) return;
+  if (img !== currentSrc) {
+    currentSrc = img;
+    if (leftImg)  leftImg.src  = img;
+    if (rightImg) rightImg.src = img;
+  }
+  leftPanel.classList.add('preview-active');
+  rightPanel.classList.add('preview-active');
 }
 
-if (p1 && p2) {
-  menuLinks.forEach(link => {
-    const img = link.dataset.preview;
-    if (img) { const pre = new Image(); pre.src = img; }
-
-    link.addEventListener('mouseenter', () => showPreview(link.dataset.preview));
-  });
-
-  overlay.addEventListener('mouseleave', () => {
-    if (activePreview) activePreview.classList.remove('active');
-    currentSrc = '';
-  });
+function hidePreview() {
+  if (leftPanel)  leftPanel.classList.remove('preview-active');
+  if (rightPanel) rightPanel.classList.remove('preview-active');
+  currentSrc = '';
 }
+
+menuLinks.forEach(link => {
+  const img = link.dataset.preview;
+  if (img) { const pre = new Image(); pre.src = img; }
+  link.addEventListener('mouseenter', () => showPreview(link.dataset.preview));
+});
+
+overlay.addEventListener('mouseleave', hidePreview);
 
 // click flash animation
 menuLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
+  link.addEventListener('click', function() {
     this.classList.add('clicked');
   });
 });
@@ -87,10 +88,8 @@ menuLinks.forEach(link => {
     const img = this.dataset.preview;
     const href = this.getAttribute('href');
     if (!img || !href || href === '#') return;
-
     e.preventDefault();
     showPreview(img);
-
     setTimeout(() => { window.location.href = href; }, 350);
   }, { passive: false });
 });
