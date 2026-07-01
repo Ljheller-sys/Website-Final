@@ -125,6 +125,8 @@
   aspect-ratio: 16 / 9;
   background: #111;
   overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto 2rem;
 }
 
 .detail-video-wrap iframe {
