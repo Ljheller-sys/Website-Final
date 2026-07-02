@@ -303,7 +303,7 @@ nav {
 .collage-grid {
   position: relative;
   width: 100%;
-  height: 680px;
+  height: 1020px;
   margin: 0 auto;
 }
 
@@ -339,62 +339,90 @@ nav {
   filter: grayscale(0%);
 }
 
-/* scattered positions — 8 images */
+/* scattered positions — 12 images, 3 rows */
 .img-placeholder:nth-child(1) {
-  width: 26%;
-  height: 340px;
-  left: 1%;
-  top: 20px;
-  transform: rotate(-3deg);
+  width: 24%;
+  height: 310px;
+  left: 0%;
+  top: 10px;
+  transform: rotate(-2.5deg);
 }
 .img-placeholder:nth-child(2) {
-  width: 22%;
-  height: 280px;
-  left: 20%;
-  top: 60px;
+  width: 20%;
+  height: 270px;
+  left: 18%;
+  top: 50px;
   transform: rotate(2deg);
 }
 .img-placeholder:nth-child(3) {
-  width: 28%;
-  height: 370px;
-  left: 37%;
+  width: 26%;
+  height: 340px;
+  left: 34%;
   top: 0px;
   transform: rotate(-1.5deg);
 }
 .img-placeholder:nth-child(4) {
   width: 20%;
   height: 260px;
-  left: 62%;
-  top: 40px;
-  transform: rotate(3.5deg);
+  left: 57%;
+  top: 30px;
+  transform: rotate(3deg);
 }
 .img-placeholder:nth-child(5) {
-  width: 24%;
-  height: 300px;
-  left: 76%;
-  top: 10px;
+  width: 22%;
+  height: 290px;
+  left: 77%;
+  top: 5px;
   transform: rotate(-2deg);
 }
 .img-placeholder:nth-child(6) {
   width: 22%;
   height: 280px;
-  left: 5%;
-  top: 320px;
+  left: 3%;
+  top: 330px;
   transform: rotate(2.5deg);
 }
 .img-placeholder:nth-child(7) {
-  width: 30%;
+  width: 28%;
   height: 310px;
-  left: 28%;
-  top: 340px;
+  left: 23%;
+  top: 310px;
   transform: rotate(-2deg);
 }
 .img-placeholder:nth-child(8) {
-  width: 24%;
-  height: 290px;
-  left: 64%;
-  top: 330px;
+  width: 22%;
+  height: 270px;
+  left: 51%;
+  top: 345px;
   transform: rotate(1.5deg);
+}
+.img-placeholder:nth-child(9) {
+  width: 20%;
+  height: 300px;
+  left: 74%;
+  top: 320px;
+  transform: rotate(-3deg);
+}
+.img-placeholder:nth-child(10) {
+  width: 26%;
+  height: 290px;
+  left: 2%;
+  top: 660px;
+  transform: rotate(1deg);
+}
+.img-placeholder:nth-child(11) {
+  width: 32%;
+  height: 310px;
+  left: 30%;
+  top: 650px;
+  transform: rotate(-1.5deg);
+}
+.img-placeholder:nth-child(12) {
+  width: 24%;
+  height: 280px;
+  left: 68%;
+  top: 670px;
+  transform: rotate(2.5deg);
 }
 
 
