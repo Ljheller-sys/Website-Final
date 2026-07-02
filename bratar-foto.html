@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bratar Burger — Luca Heller</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="foto-galerie.css" />
+</head>
+<body class="detail-page">
+
+  <nav>
+    <div class="nav-logo"><a href="index.html" style="color:inherit;text-decoration:none;">PORTFOLIO</a></div>
+    <button class="burger" id="burger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <button class="menu-close" id="menuClose" aria-label="Menü schließen">&#10005;</button>
+    <div class="menu-center">
+      <ul class="menu-links">
+        <li><a href="index.html" class="menu-link">Home</a></li>
+        <li><a href="video.html" class="menu-link">Video</a></li>
+        <li><a href="foto.html" class="menu-link">Foto</a></li>
+        <li><a href="artist.html" class="menu-link">Artist</a></li>
+        <li><a href="index.html#kontakt" class="menu-link">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="foto-hero">
+    <div class="foto-hero-bg" id="heroFotoBg" style="background-image: url('');"></div>
+    <div class="foto-hero-content">
+      <p class="detail-category">Foto — Produkt</p>
+      <h1 class="detail-title">Bratar <span>Burger</span></h1>
+    </div>
+  </section>
+
+  <a href="foto.html" class="detail-back">Zurück zu Foto</a>
+
+  <!-- Kein Tab-System nötig, nur eine Kategorie -->
+  <div class="foto-section active" id="tab-produkt" style="display:block;">
+    <p class="foto-section-label">Produktfotos</p>
+    <div class="foto-masonry" id="gallery-produkt">
+      <div class="foto-placeholder-item" style="aspect-ratio:1/1;background:#111;display:flex;align-items:center;justify-content:center;font-size:0.6rem;letter-spacing:0.2em;color:#333;text-transform:uppercase;margin-bottom:0.5rem;">Foto folgt</div>
+      <div class="foto-placeholder-item" style="aspect-ratio:3/4;background:#111;display:flex;align-items:center;justify-content:center;font-size:0.6rem;letter-spacing:0.2em;color:#333;text-transform:uppercase;margin-bottom:0.5rem;">Foto folgt</div>
+      <div class="foto-placeholder-item" style="aspect-ratio:1/1;background:#111;display:flex;align-items:center;justify-content:center;font-size:0.6rem;letter-spacing:0.2em;color:#333;text-transform:uppercase;margin-bottom:0.5rem;">Foto folgt</div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&#10005;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#8592;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+    <button class="lightbox-nav lightbox-next" id="lightboxNext">&#8594;</button>
+    <span class="lightbox-counter" id="lightboxCounter"></span>
+  </div>
+
+  <div class="foto-footer-nav">
+    <a href="foto.html">← Alle Fotos</a>
+    <a href="index.html#kontakt">Kontakt</a>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="foto-galerie.js"></script>
+  <script>
+    const bg = document.getElementById('heroFotoBg');
+    if (bg) requestAnimationFrame(() => bg.classList.add('loaded'));
+  </script>
+</body>
+</html>
