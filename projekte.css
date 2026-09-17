@@ -113,9 +113,11 @@
   white-space: nowrap;
 }
 
-.projekt-item:hover .projekt-link {
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--accent);
+@media (hover: hover) {
+  .projekt-item:hover .projekt-link {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--accent);
+  }
 }
 
 /* ── RESPONSIVE ────────────────────────────────────────────── */

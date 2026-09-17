@@ -101,8 +101,10 @@
   transition: transform 0.5s ease;
 }
 
-.foto-masonry-item:hover img {
-  transform: scale(1.03);
+@media (hover: hover) {
+  .foto-masonry-item:hover img {
+    transform: scale(1.03);
+  }
 }
 
 /* LIGHTBOX */
