@@ -320,11 +320,13 @@ nav {
   width: 100%;
   height: auto;
   display: block;
-  filter: grayscale(100%);
   transition: filter 0.5s ease, transform 0.5s ease;
 }
 
 @media (hover: hover) {
+  .img-placeholder img {
+    filter: grayscale(100%);
+  }
   .img-placeholder:hover img {
     filter: grayscale(0%);
     transform: scale(1.03);
