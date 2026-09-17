@@ -168,12 +168,11 @@ nav {
 }
 
 .referenzen-label {
-  font-size: clamp(3rem, 7vw, 7rem);
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  line-height: 1;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--text);
+  color: #555;
   margin-bottom: 4rem;
 }
 
