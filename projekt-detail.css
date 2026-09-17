@@ -66,6 +66,7 @@
   text-transform: uppercase;
   transition: color 0.2s;
 }
+.detail-back:visited { color: #555; }
 .detail-back:hover { color: var(--accent); }
 .detail-back::before { content: '←'; font-size: 1rem; }
 
